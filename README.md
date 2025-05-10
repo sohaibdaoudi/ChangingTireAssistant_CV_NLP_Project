@@ -11,7 +11,7 @@
 
 ## 📖 Overview
 
-This assistant leverages real-time computer vision and NLP to guide users through changing a flat tire using an egocentric (chest-mounted) camera. Inspired by energy optimization projects like V2G, this project focuses on practical, real-world assistance using a lightweight CV-NLP pipeline.
+This assistant leverages real-time computer vision and NLP to guide users through changing a flat tire using an egocentric (chest-mounted) camera. Inspired by MECCANO project, this project focuses on practical, real-world assistance using a lightweight CV-NLP pipeline.
 
 The assistant detects tools, tracks task progress, and provides interactive, step-by-step visual and voice instructions.
 
