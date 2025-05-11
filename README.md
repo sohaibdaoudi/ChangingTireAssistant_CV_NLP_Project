@@ -2,7 +2,7 @@
 # Changing Tire Assistant – Computer Vision & NLP Project
 
 [![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE.txt)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 **🚧 Project Status: Under Development 🚧**
 
@@ -69,4 +69,4 @@ The assistant detects tools, tracks task progress, and provides interactive, ste
 
 ## 📜 License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the `LICENSE.txt` file for more details.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the `LICENSE` file for more details.
