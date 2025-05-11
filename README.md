@@ -2,8 +2,7 @@
 # Changing Tire Assistant – Computer Vision & NLP Project
 
 [![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/downloads/)
-[![Streamlit Version](https://img.shields.io/badge/streamlit-1.20%2B-ff69b4.svg)](https://streamlit.io/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE.txt)
 
 **🚧 Project Status: Under Development 🚧**
 
@@ -33,40 +32,23 @@ The assistant detects tools, tracks task progress, and provides interactive, ste
 ## 📂 Project Structure
 
 ```
-├── app/                    # Streamlit-based user interface
-├── models/                 # Trained YOLO/Action Recognition models
+├── app/                   
+├── models/                 # Trained YOLO/Action Recognition/Voice Assistant models
 ├── notebooks/              # Data processing and model training notebooks
 ├── data/                   # Sample egocentric video frames, annotations
 ├── utils/                  # Utility scripts for preprocessing, inference
 ├── requirements.txt        # Python dependencies
-└── README.md               # This file
+├── README.md               # This file
+└── LICENSE.txt               
 ```
 
 ---
 
 ## 🧠 Models Used
 
-- **Object Detection**:
-  - YOLOv5-based custom model trained on annotated tire change scenes.
-- **Action Recognition**:
-  - RNN or Temporal CNN to recognize the current step being performed.
-- **Voice Assistant**:
-  - Lightweight NLP model based on intent classification (non-LLM).
-
----
-
-## 🚀 Running the Assistant
-
-```bash
-git clone https://github.com/sohaibdaoudi/ChangingTireAssistant_CV_NLP_Project.git
-cd ChangingTireAssistant_CV_NLP_Project
-
-python3 -m venv venv
-source venv/bin/activate  # or `venv\Scripts\activate` on Windows
-
-pip install -r requirements.txt
-streamlit run app/main.py
-```
+- **Object Detection**
+- **Action Recognition**
+- **Voice Assistant**
 
 ---
 
@@ -87,4 +69,4 @@ streamlit run app/main.py
 
 ## 📜 License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the `LICENSE` file for more details.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the `LICENSE.txt` file for more details.
