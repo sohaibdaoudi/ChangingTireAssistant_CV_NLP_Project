@@ -89,8 +89,8 @@ This section details the implementation of the object detection model.
 **Description**: This model is utilized for identifying various objects relevant to the tire-changing process.
 
 **Prerequisites**:
-* Python 3.10 or newer
-* Ultralytics package (version specific to YOLOv11 Nano, if applicable)
+* Python 3.1X
+* Ultralytics package (version compatible with your GPU, you can ask any AI for that)
 * CUDA 11.8+ (recommended for GPU acceleration)
 
 ---
@@ -127,9 +127,7 @@ First, open your command line interface (e.g., Command Prompt, PowerShell, Termi
 cd C:\path_to_project
 ```
 
-1.  **Create a Virtual Environment (Recommended)**:
-Choose **one** of the following methods:
-
+1.  **Create a Virtual Environment (Recommended)** (Choose **one** of the following methods):
     * **Using `venv` (Python's built-in)**:
         ```bash
         python -m venv venv
