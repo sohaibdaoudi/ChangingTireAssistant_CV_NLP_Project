@@ -74,69 +74,100 @@ Each action class directory contains video clips used for model training and val
 
 https://github.com/user-attachments/assets/6d6bef7f-5d31-4b78-b57b-93b3566c5007
 
-```markdown
-# Models Testing
+# Changing Tire Assistant - Computer Vision & NLP Project: Models Testing
+
+This document outlines the setup and usage of the models implemented within the Changing Tire Assistant project.
+
+---
 
 ## 📦 Object Detection
 
----
+This section details the implementation of the object detection model.
 
 ### YOLOv11 Nano Implementation Guide
 
-**Requirements**:
-- Python 3.10 or newer
-- Ultralytics package (for YOLOv11 Nano)
-- CUDA 11.8+ recommended for GPU acceleration
+**Description**: This model is utilized for identifying various objects relevant to the tire-changing process.
+
+**Prerequisites**:
+* Python 3.10 or newer
+* Ultralytics package (version specific to YOLOv11 Nano, if applicable)
+* CUDA 11.8+ (recommended for GPU acceleration)
 
 ---
 
-### Setup Options
+### ⚙️ Setup
 
-#### With Git:
-```bash
-# Clone repository
-git clone https://github.com/sohaibdaoudi/ChangingTireAssistant_CV_NLP_Project.git
-cd changing-tire-assistant/Object\ Detection/
-```
+You can set up the project using either Git or by downloading the ZIP file.
 
-#### Without Git (ZIP Download):
-1. Download repository ZIP:
-   - Full repo: Click "Code" → "Download ZIP" on GitHub
-   - Object Detection only: [Download Link](https://github.com/yourusername/changing-tire-assistant/archive/refs/heads/main.zip)
-2. Extract ZIP file
-3. Navigate to Object Detection folder
+#### Option 1: Using Git (Recommended)
 
----
+1.  **Clone the Repository**:
+    ```bash
+    git clone [https://github.com/sohaibdaoudi/ChangingTireAssistant_CV_NLP_Project.git](https://github.com/sohaibdaoudi/ChangingTireAssistant_CV_NLP_Project.git)
+    ```
+2.  **Navigate to the Object Detection Directory**:
+    ```bash
+    cd ChangingTireAssistant_CV_NLP_Project/Object\ Detection/
+    ```
 
-### Installation & Execution
+#### Option 2: Manual Download (ZIP)
 
-1. Install requirements (use venv recommended):
-```bash
-python -m pip install --upgrade pip
-pip install ultralytics==11.0.0 opencv-python==4.9.0.80
-```
-
-2. Run detection (basic CPU version):
-```bash
-python detect_yolo.py --model best.pt --source test.mp4 --resolution 1280x720
-```
+1.  **Download the Repository**:
+    * **Full Repository**: Navigate to the [main repository page](https://github.com/sohaibdaoudi/ChangingTireAssistant_CV_NLP_Project) and click on "Code" → "Download ZIP".
+    * **Object Detection Module Only**: *(If a direct link for the subdirectory is available, include it here. The provided link seems to be a placeholder or a general main branch zip.)* A direct download for only the Object Detection folder is typically achieved by downloading the full repository and then extracting the relevant folder.
+2.  **Extract the ZIP File**: Unzip the downloaded file to your desired location.
+3.  **Navigate to the Object Detection Directory**: Open your terminal or command prompt and change to the `Object Detection` folder within the extracted contents.
 
 ---
 
-> Note: Commands with `--resolution` flag support various input sizes (1280x720 shown as example)
-```
+### 🚀 Installation and Execution
+
+1.  **Create a Virtual Environment (Recommended)**:
+    ```bash
+    python -m venv venv
+    # Activate the virtual environment
+    # On Windows:
+    # venv\Scripts\activate
+    # On macOS/Linux:
+    # source venv/bin/activate
+    ```
+
+2.  **Install Dependencies**:
+    Ensure your `pip` is up to date and then install the required packages.
+    ```bash
+    python -m pip install --upgrade pip
+    pip install ultralytics==11.0.0 opencv-python==4.9.0.80
+    ```
+    *(Note: The `ultralytics` version `11.0.0` is specified as per the original document. Confirm if this is the correct version for YOLOv11 Nano, as YOLO versions are typically lower, e.g., YOLOv8, YOLOv9. If "YOLOv11" is a custom or future version, ensure the package version corresponds correctly.)*
+
+3.  **Run Detection**:
+    Execute the detection script. The following command runs the detection on a test video using the CPU.
+    ```bash
+    python detect_yolo.py --model best.pt --source test.mp4 --resolution 1280x720
+    ```
+    * `--model best.pt`: Specifies the path to your trained model weights.
+    * `--source test.mp4`: Specifies the path to your input video or image source.
+    * `--resolution 1280x720`: Sets the input resolution. This flag supports various input sizes.
+
+> **Note**: For GPU acceleration, ensure your CUDA drivers and PyTorch version with CUDA support are correctly installed. The execution command might vary slightly or automatically utilize the GPU if available and `ultralytics` is configured for it.
+
+---
 
 ## 📦 Action Recognition
 
-
-
-
-# 👨‍💻 Authors
-- **SOHAIB DAOUDI** – [soh.daoudi@gmail.com](mailto:soh.daoudi@gmail.com)
-- **MAROUANE MAJIDI** – [majidi.marouane0@gmail.com](mailto:majidi.marouane0@gmail.com)
+*(Details for the Action Recognition module, including specific models, requirements, setup, installation, and execution, should be added here following a similar structure to the Object Detection section.)*
 
 ---
 
-# 📜 License
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the `LICENSE` file for more details.
+## 👨‍💻 Authors
 
+This project is developed and maintained by:
+
+* **SOHAIB DAOUDI** – [soh.daoudi@gmail.com](mailto:soh.daoudi@gmail.com)
+* **MAROUANE MAJIDI** – [majidi.marouane0@gmail.com](mailto:majidi.marouane0@gmail.com)
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Please see the `LICENSE` file in the repository for full license text and details.
