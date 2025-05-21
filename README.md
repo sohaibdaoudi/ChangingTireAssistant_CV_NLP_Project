@@ -122,7 +122,7 @@ You can set up the project by cloning the full repository or by cloning only the
 
 ### 0. Navigate to Your Project Directory
 
-First, open your command line interface (e.g., Command Prompt, PowerShell, Terminal, Anaconda Prompt) and navigate to the project's root folder. Replace `C:\path_to_project` with the actual path to your project.
+First, open your command line interface (e.g., Command Prompt, PowerShell, Terminal, Anaconda Prompt) and navigate to the project's root folder. Replace `C:\path_to_folder` with the actual path to your Object Detection folder.
 ```bash
 cd C:\path_to_project
 ```
