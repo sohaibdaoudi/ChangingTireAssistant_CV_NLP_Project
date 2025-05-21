@@ -4,69 +4,82 @@
 [![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
+
 **🚧 Project Status: Under Development 🚧**
 
 ---
 
 ## 📖 Overview
+This assistant leverages real-time computer vision and NLP to guide users through changing a flat tire using an egocentric (chest-mounted) camera. 
 
-This assistant leverages real-time computer vision and NLP to guide users through changing a flat tire using an egocentric (chest-mounted) camera. Inspired by MECCANO project, this project focuses on practical, real-world assistance using a lightweight CV-NLP pipeline.
-
-The assistant detects tools, tracks task progress, and provides interactive, step-by-step visual and voice instructions.
+The assistant detects tools, tracks task progress, and provides interactive, step-by-step visual and voice instructions for changing a vehicle tire.
 
 ---
 
 ## 🔍 System Features
-
 - **Real-Time Tool Detection**:
-  - Identifies car jack, wheel wrench, and flat/new tires.
+  - Identifies car jack, wheel wrench, etc.
 - **Action Recognition**:
   - Tracks task progression like loosening nuts, jacking the car, replacing the wheel, etc.
 - **Voice Assistant**:
-  - Responds to user queries such as "What’s next?" or "Am I doing it right?"
+  - Responds to user queries such as "What's next?"
 - **Edge-Friendly Pipeline**:
-  - Designed for deployment on mobile or embedded systems.
+  - Designed for deployment on mobile or embedded systems with minimal latency.
 
 ---
 
 ## 📂 Project Structure
-
-```
-├── app/                   
-├── models/                 # Trained YOLO/Action Recognition/Voice Assistant models
-├── notebooks/              # Data processing and model training notebooks
-├── data/                   # Sample egocentric video frames, annotations
-├── utils/                  # Utility scripts for preprocessing, inference
-├── requirements.txt        # Python dependencies
-├── README.md               # This file
-└── LICENSE.txt               
+```              
+├── action_recognition/                 # Trained YOLO/Action Recognition/Voice Assistant models
+├── object_detection/                  # Utility scripts for preprocessing, inference
+├── requirements.txt        # Python dependencies           # This file           
 ```
 
 ---
 
 ## 🧠 Models Used
-
-- **Object Detection**
-- **Action Recognition**
-- **Voice Assistant**
-
----
-
-## 🔮 Future Work
-
-- [ ] Integrate multimodal reasoning for complex error recovery.
-- [ ] Improve action segmentation with Transformers.
-- [ ] Enhance voice assistant via on-device TTS/STT.
+- **Object Detection**: YOLOv8 fine-tuned on tire-change-specific tools and components
+- **Action Recognition**: We are trying different models SlowFast , TSM , TimeDistributed EfficientNetB0
+- **Voice Assistant**: Whisper-based STT with a custom NLP pipeline for contextual understanding
 
 ---
+
+## 📊 Data
+We collected and curated a custom dataset specifically for the tire change domain:
+
+### Data Collection Methodology
+- **Primary Source**: Self-collected footage changing two tires on a Renault Megane 2, recorded with Samsung A50 smartphones from chest-mounted positions
+- **Secondary Source**: Curated YouTube videos showing different tire change scenarios and vehicle types
+- **Annotation Process**: Manual annotation of action segments and tool detection bounding boxes
+
+### Dataset Structure
+The data directory contains the following action classes:
+```
+data/
+├── lower_car/             # Videos/frames of lowering the car from the jack
+├── lift_car_with_jack/    # Videos/frames of raising the car with jack
+├── tighten_bolts/         # Videos/frames of final bolt tightening with wrench
+├── initial_wrench_tighten/# Videos/frames of initial wrench positioning
+├── place_spare_tire/      # Videos/frames of positioning the spare tire
+├── remove_tire/           # Videos/frames of removing the flat tire
+├── hand_tighten_bolts/    # Videos/frames of hand-tightening bolts
+├── loosen_bolts/          # Videos/frames of loosening wheel bolts
+├── remove_bolts/          # Videos/frames of removing wheel bolts
+├── labels.csv             # Action timestamps and class annotations
+└── README.txt             # Dataset documentation
+```
+
+Each action class directory contains video clips used for model training and validation.
+
+https://github.com/user-attachments/assets/6d6bef7f-5d31-4b78-b57b-93b3566c5007
+
 
 ## 👨‍💻 Authors
-
 - **SOHAIB DAOUDI** – [soh.daoudi@gmail.com](mailto:soh.daoudi@gmail.com)
 - **MAROUANE MAJIDI** – [majidi.marouane0@gmail.com](mailto:majidi.marouane0@gmail.com)
 
 ---
 
 ## 📜 License
-
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the `LICENSE` file for more details.
+
