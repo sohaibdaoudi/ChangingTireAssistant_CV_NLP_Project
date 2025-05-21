@@ -168,13 +168,14 @@ Choose **one** of the following methods:
     *Generally, it's good practice to use `pip` for packages not available on Conda channels or when specific versions are needed via pip, even within a Conda environment.*
 
 3.  **Run Detection**:
-    Execute the detection script. The following command runs the detection on a test video using the CPU.
+    Execute the detection script. The following command runs the detection on a test video using the GPU.
     ```bash
-    python detect_yolo.py --model best.pt --source test.mp4 --resolution 1280x720
+    python detect_yolo.py --model best.pt --source test.mp4 --resolution 1280x720 --device 0
     ```
     * `--model best.pt`: Specifies the path to your trained model weights.
     * `--source test.mp4`: Specifies the path to your input video or image source.
     * `--resolution 1280x720`: Sets the input resolution. This flag supports various input sizes.
+    * `--device 0`: This command will let the test run on GPU, you can delete it if you want to use only CPU.
 
 > **Note**: For GPU acceleration, ensure your CUDA drivers and PyTorch version with CUDA support are correctly installed. The execution command might vary slightly or automatically utilize the GPU if available and `ultralytics` is configured for it. If using Conda, you might also need to install CUDA-enabled PyTorch via Conda channels: `conda install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch -c nvidia`.
 
