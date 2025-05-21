@@ -105,10 +105,8 @@ You can set up the project by cloning the full repository or by cloning only the
     ```bash
     git clone https://github.com/sohaibdaoudi/ChangingTireAssistant_CV_NLP_Project.git
     ```
-2.  **Navigate to the Object Detection Directory**:
-    ```bash
-    cd ChangingTireAssistant_CV_NLP_Project/Object\ Detection/
-    ```
+2.  **Navigate to the Object Detection Directory**: Open your terminal or command prompt and change to the `Object Detection` folder within the extracted contents.
+
 
 #### Option 2: Manual Download (ZIP)
 
@@ -122,7 +120,12 @@ You can set up the project by cloning the full repository or by cloning only the
 
 ### 🚀 Installation and Execution
 
-*(These steps assume you have successfully navigated into the `Object Detection` directory obtained through one of the methods above)*
+### 0. Navigate to Your Project Directory
+
+First, open your command line interface (e.g., Command Prompt, PowerShell, Terminal, Anaconda Prompt) and navigate to the project's root folder. Replace `C:\path_to_project` with the actual path to your project.
+```bash
+cd C:\path_to_project
+```
 
 1.  **Create a Virtual Environment (Recommended)**:
 Choose **one** of the following methods:
@@ -142,9 +145,9 @@ Choose **one** of the following methods:
             ```
 
     * **Using `conda` (Anaconda/Miniconda)**:
-        Replace `myenv` with your desired environment name and `3.10` with the Python version specified in prerequisites (or your preferred compatible version).
+        Replace `myenv` with your desired environment name and your preferred compatible version of python (3.1X).
         ```bash
-        conda create --name myenv python=3.10
+        conda create --name myenv python
         ```
         Activate the Conda environment:
         ```bash
@@ -155,20 +158,19 @@ Choose **one** of the following methods:
     Ensure your `pip` is up to date (if using `venv` or pip within Conda) and then install the required packages.
     ```bash
     python -m pip install --upgrade pip
-    pip install ultralytics==11.0.0 opencv-python==4.9.0.80
+    pip install ultralytics==XX.XX.XX opencv-python==XX.XX.XX
     ```
-    *(Note: The `ultralytics` version `11.0.0` is specified as per the original document. Confirm if this is the correct version for YOLOv11 Nano, as YOLO versions are typically lower, e.g., YOLOv8, YOLOv9. If "YOLOv11" is a custom or future version, ensure the package version corresponds correctly.)*
+    *(Note: Install `ultralytics` version that will work with GPU if you have one, if not install whatever you want)*
 
     *If using Conda, you might prefer to install packages using Conda where possible, for example:*
     ```bash
     # conda install anaconda # For a fuller anaconda distribution within the environment if needed
     # conda install pip # To ensure pip is available in the conda env
-    # pip install ultralytics==11.0.0 opencv-python==4.9.0.80
+    # pip install ultralytics==XX.XX.XX opencv-python==XX.XX.XX
     ```
-    *Generally, it's good practice to use `pip` for packages not available on Conda channels or when specific versions are needed via pip, even within a Conda environment.*
 
 3.  **Run Detection**:
-    Execute the detection script. The following command runs the detection on a test video using the GPU.
+    Execute the detection script. The following command runs the detection on the test video using the GPU (or not by removing --device 0).
     ```bash
     python detect_yolo.py --model best.pt --source test.mp4 --resolution 1280x720 --device 0
     ```
@@ -176,8 +178,6 @@ Choose **one** of the following methods:
     * `--source test.mp4`: Specifies the path to your input video or image source.
     * `--resolution 1280x720`: Sets the input resolution. This flag supports various input sizes.
     * `--device 0`: This command will let the test run on GPU, you can delete it if you want to use only CPU.
-
-> **Note**: For GPU acceleration, ensure your CUDA drivers and PyTorch version with CUDA support are correctly installed. The execution command might vary slightly or automatically utilize the GPU if available and `ultralytics` is configured for it. If using Conda, you might also need to install CUDA-enabled PyTorch via Conda channels: `conda install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch -c nvidia`.
 
 ---
 
