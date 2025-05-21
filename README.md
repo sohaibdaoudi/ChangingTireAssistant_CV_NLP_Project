@@ -97,13 +97,13 @@ This section details the implementation of the object detection model.
 
 ### ⚙️ Setup
 
-You can set up the project using either Git or by downloading the ZIP file.
+You can set up the project by cloning the full repository or by cloning only the `Object Detection` directory using Git's sparse checkout feature.
 
-#### Option 1: Using Git (Recommended)
+#### Option 1: Using Git (Recommended - Full Repository)
 
 1.  **Clone the Repository**:
     ```bash
-    git clone [https://github.com/sohaibdaoudi/ChangingTireAssistant_CV_NLP_Project.git](https://github.com/sohaibdaoudi/ChangingTireAssistant_CV_NLP_Project.git)
+    git clone https://github.com/sohaibdaoudi/ChangingTireAssistant_CV_NLP_Project.git
     ```
 2.  **Navigate to the Object Detection Directory**:
     ```bash
@@ -114,7 +114,7 @@ You can set up the project using either Git or by downloading the ZIP file.
 
 1.  **Download the Repository**:
     * **Full Repository**: Navigate to the [main repository page](https://github.com/sohaibdaoudi/ChangingTireAssistant_CV_NLP_Project) and click on "Code" → "Download ZIP".
-    * **Object Detection Module Only**: *(If a direct link for the subdirectory is available, include it here. The provided link seems to be a placeholder or a general main branch zip.)* A direct download for only the Object Detection folder is typically achieved by downloading the full repository and then extracting the relevant folder.
+    * **Object Detection**: A direct download for only the Object Detection folder is typically achieved by downloading the full repository and then extracting the relevant folder.
 2.  **Extract the ZIP File**: Unzip the downloaded file to your desired location.
 3.  **Navigate to the Object Detection Directory**: Open your terminal or command prompt and change to the `Object Detection` folder within the extracted contents.
 
@@ -122,23 +122,50 @@ You can set up the project using either Git or by downloading the ZIP file.
 
 ### 🚀 Installation and Execution
 
+*(These steps assume you have successfully navigated into the `Object Detection` directory obtained through one of the methods above)*
+
 1.  **Create a Virtual Environment (Recommended)**:
-    ```bash
-    python -m venv venv
-    # Activate the virtual environment
-    # On Windows:
-    # venv\Scripts\activate
-    # On macOS/Linux:
-    # source venv/bin/activate
-    ```
+Choose **one** of the following methods:
+
+    * **Using `venv` (Python's built-in)**:
+        ```bash
+        python -m venv venv
+        ```
+        Activate the virtual environment:
+        * On Windows:
+            ```bash
+            venv\Scripts\activate
+            ```
+        * On macOS/Linux:
+            ```bash
+            source venv/bin/activate
+            ```
+
+    * **Using `conda` (Anaconda/Miniconda)**:
+        Replace `myenv` with your desired environment name and `3.10` with the Python version specified in prerequisites (or your preferred compatible version).
+        ```bash
+        conda create --name myenv python=3.10
+        ```
+        Activate the Conda environment:
+        ```bash
+        conda activate myenv
+        ```
 
 2.  **Install Dependencies**:
-    Ensure your `pip` is up to date and then install the required packages.
+    Ensure your `pip` is up to date (if using `venv` or pip within Conda) and then install the required packages.
     ```bash
     python -m pip install --upgrade pip
     pip install ultralytics==11.0.0 opencv-python==4.9.0.80
     ```
     *(Note: The `ultralytics` version `11.0.0` is specified as per the original document. Confirm if this is the correct version for YOLOv11 Nano, as YOLO versions are typically lower, e.g., YOLOv8, YOLOv9. If "YOLOv11" is a custom or future version, ensure the package version corresponds correctly.)*
+
+    *If using Conda, you might prefer to install packages using Conda where possible, for example:*
+    ```bash
+    # conda install anaconda # For a fuller anaconda distribution within the environment if needed
+    # conda install pip # To ensure pip is available in the conda env
+    # pip install ultralytics==11.0.0 opencv-python==4.9.0.80
+    ```
+    *Generally, it's good practice to use `pip` for packages not available on Conda channels or when specific versions are needed via pip, even within a Conda environment.*
 
 3.  **Run Detection**:
     Execute the detection script. The following command runs the detection on a test video using the CPU.
@@ -149,7 +176,7 @@ You can set up the project using either Git or by downloading the ZIP file.
     * `--source test.mp4`: Specifies the path to your input video or image source.
     * `--resolution 1280x720`: Sets the input resolution. This flag supports various input sizes.
 
-> **Note**: For GPU acceleration, ensure your CUDA drivers and PyTorch version with CUDA support are correctly installed. The execution command might vary slightly or automatically utilize the GPU if available and `ultralytics` is configured for it.
+> **Note**: For GPU acceleration, ensure your CUDA drivers and PyTorch version with CUDA support are correctly installed. The execution command might vary slightly or automatically utilize the GPU if available and `ultralytics` is configured for it. If using Conda, you might also need to install CUDA-enabled PyTorch via Conda channels: `conda install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch -c nvidia`.
 
 ---
 
