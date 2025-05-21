@@ -38,7 +38,7 @@ The assistant detects tools, tracks task progress, and provides interactive, ste
 ---
 
 ## 🧠 Models Used
-- **Object Detection**: YOLOv8 fine-tuned on tire-change-specific tools and components
+- **Object Detection**: YOLOv11n fine-tuned on tire-change-specific tools and components
 - **Action Recognition**: We are trying different models SlowFast , TSM , TimeDistributed EfficientNetB0
 - **Voice Assistant**: Whisper-based STT with a custom NLP pipeline for contextual understanding
 
