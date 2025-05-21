@@ -170,7 +170,7 @@ cd C:\path_to_project
 3.  **Run Detection**:
     Execute the detection script. The following command runs the detection on the test video using the GPU (or not by removing --device 0).
     ```bash
-    python detect_yolo.py --model best.pt --source test.mp4 --resolution 1280x720 --device 0
+    python yolo_detect.py --model best.pt --source test.mp4 --resolution 1280x720 --device 0
     ```
     * `--model best.pt`: Specifies the path to your trained model weights.
     * `--source test.mp4`: Specifies the path to your input video or image source.
