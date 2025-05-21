@@ -168,7 +168,7 @@ cd C:\path_to_project
     ```
 
 3.  **Run Detection**:
-    Execute the detection script. The following command runs the detection on the test video using the GPU (or not by removing --device 0).
+    Execute the detection script. The following command runs the detection on the test video using the GPU (or using only CPU by removing --device 0).
     ```bash
     python yolo_detect.py --model best.pt --source test.mp4 --resolution 1280x720 --device 0
     ```
