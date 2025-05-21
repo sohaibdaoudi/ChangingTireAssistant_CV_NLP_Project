@@ -32,7 +32,7 @@ The assistant detects tools, tracks task progress, and provides interactive, ste
 ```              
 ├── action_recognition/                 
 ├── Object Detection/                 
-├── requirements.txt                 
+├── UML Model                 
 ```
 
 ---
