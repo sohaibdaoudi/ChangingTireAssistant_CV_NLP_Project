@@ -74,7 +74,7 @@ Each action class directory contains video clips used for model training and val
 
 https://github.com/user-attachments/assets/6d6bef7f-5d31-4b78-b57b-93b3566c5007
 
-# Changing Tire Assistant - Computer Vision & NLP Project: Models Testing
+# Models Testing
 
 This document outlines the setup and usage of the models implemented within the Changing Tire Assistant project.
 
@@ -97,9 +97,9 @@ This section details the implementation of the object detection model.
 
 ### ⚙️ Setup
 
-You can set up the project by cloning the full repository or by cloning only the `Object Detection` directory using Git's sparse checkout feature.
+You can set up the project by cloning the repository.
 
-#### Option 1: Using Git (Recommended - Full Repository)
+#### Option 1: Using Git
 
 1.  **Clone the Repository**:
     ```bash
@@ -124,7 +124,7 @@ You can set up the project by cloning the full repository or by cloning only the
 
 First, open your command line interface (e.g., Command Prompt, PowerShell, Terminal, Anaconda Prompt) and navigate to the project's root folder. Replace `C:\path_to_folder` with the actual path to your Object Detection folder.
 ```bash
-cd C:\path_to_project
+cd C:\path_to_folder
 ```
 
 1.  **Create a Virtual Environment (Recommended)** (Choose **one** of the following methods):
