@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 
-## ** Project Status: Under Development **
+## Project Status: Under Development
 
 ---
 
