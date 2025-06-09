@@ -5,18 +5,18 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 
-**🚧 Project Status: Under Development 🚧**
+## ** Project Status: Under Development **
 
 ---
 
-## 📖 Overview
+## Overview
 This assistant leverages real-time computer vision and NLP to guide users through changing a flat tire using an egocentric (chest-mounted) camera. 
 
 The assistant detects tools, tracks task progress, and provides interactive, step-by-step visual and voice instructions for changing a vehicle tire.
 
 ---
 
-## 🔍 System Features
+## System Features
 - **Real-Time Tool Detection**:
   - Identifies car jack, wheel wrench, etc.
 - **Action Recognition**:
@@ -28,7 +28,7 @@ The assistant detects tools, tracks task progress, and provides interactive, ste
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 ```              
 ├── action_recognition/                 
 ├── Object Detection/                 
@@ -37,14 +37,14 @@ The assistant detects tools, tracks task progress, and provides interactive, ste
 
 ---
 
-## 🧠 Models Used
+## Models Used
 - **Object Detection**: YOLOv11n fine-tuned on tire-change-specific tools and components
 - **Action Recognition**: We are trying different models SlowFast , TSM , TimeDistributed EfficientNetB0
 - **Voice Assistant**: Whisper-based STT with a custom NLP pipeline for contextual understanding
 
 ---
 
-## 📊 Data
+## Data
 We collected and curated a custom dataset specifically for the tire change domain:
 
 ### Data Collection Methodology
@@ -80,7 +80,7 @@ This document outlines the setup and usage of the models implemented within the 
 
 ---
 
-## 📦 Object Detection
+## Object Detection
 
 This section details the implementation of the object detection model.
 
@@ -95,7 +95,7 @@ This section details the implementation of the object detection model.
 
 ---
 
-### ⚙️ Setup
+### Setup
 
 You can set up the project by cloning the repository.
 
@@ -118,7 +118,7 @@ You can set up the project by cloning the repository.
 
 ---
 
-### 🚀 Installation and Execution
+### Installation and Execution
 
 ### 0. Navigate to Your Project Directory
 
@@ -179,13 +179,13 @@ cd C:\path_to_folder
 
 ---
 
-## 📦 Action Recognition
+## Action Recognition
 
 *(Details for the Action Recognition module, including specific models, requirements, setup, installation, and execution, should be added here following a similar structure to the Object Detection section.)*
 
 ---
 
-## 👨‍💻 Authors
+## Authors
 
 This project is developed and maintained by:
 
@@ -194,6 +194,6 @@ This project is developed and maintained by:
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Please see the `LICENSE` file in the repository for full license text and details.
