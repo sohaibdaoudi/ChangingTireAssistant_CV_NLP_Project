@@ -77,12 +77,11 @@ First, ensure you have a **CUDA/cuDNN version compatible with your GPU** install
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/sohaibdaoudi/ChangingTireAssistant_CV_NLP_Project.git
-
 ```
 
 ### 2. Create and Activate Virtual Environment (Recommended)
-#### For `venv` users:
 
+#### For `venv` users:
 ```bash
 # Create the virtual environment with Python 3.9
 python3.9 -m venv venv
@@ -99,7 +98,6 @@ cd C:\path\to\folder\ChangingTireAssistant_CV_NLP_Project\Algorithm_V4
 ```
 
 #### For `conda` users:
-
 ```bash
 # Create the conda environment with Python 3.9
 conda create --name tire-assistant python=3.9
@@ -112,18 +110,33 @@ cd C:\path\to\folder\ChangingTireAssistant_CV_NLP_Project\Algorithm_V4
 ```
 
 ### 3. Install Dependencies
-
 ```bash
 pip install -r Algorithm_V4/requirements.txt
 ```
 
-### 4. Run the System
-This is the main script to run the full assistant:
+### 4. Additional Setup
+Before running the system, complete the following setup steps:
 
+- **Clone TensorFlow Models Repository:**  
+  Inside the `Algorithm_V4` folder, clone the official TensorFlow models repo:
+  ```bash
+  git clone https://github.com/tensorflow/models
+  ```
+
+- **Download Vosk Voice Assistant Model:**  
+  Download the lightweight Vosk model `vosk-model-small-en-us-0.15` (or a different version depending on your system performance) from:  
+  https://alphacephei.com/vosk/models
+
+  Extract the model folder into the directory:
+  ```bash
+  Algorithm_V4/vosk-model-small-en-us-0.15
+  ```
+
+### 5. Run the System
+Use the following command to start the full real-time Changing Tire Assistant:
 ```bash
 python Algorithm_V4/AlgoV4.py
 ```
-
 ---
 
 ## Authors
