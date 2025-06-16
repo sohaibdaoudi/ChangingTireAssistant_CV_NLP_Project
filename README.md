@@ -1,5 +1,5 @@
 # Intelligent-Assistant-for-Tire-Change
-[![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/downloads/)
+[![Python Version](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 
@@ -25,18 +25,9 @@ It detects tools, tracks task progress, and provides interactive, step-by-step v
 
 ---
 
-## Project Structure
-```              
-├── action_recognition/        # Trained models for action recognition & voice assistant
-├── object_detection/          # YOLOv8 models for tool detection
-├── requirements.txt           # Python dependencies
-```
-
----
-
 ## Models Used
 - **Object Detection**  
-  YOLOv8, fine-tuned on tire-change-specific tools and vehicle parts.
+  YOLOv11, fine-tuned on tire-change-specific tools and flat tire.
 
 - **Action Recognition**  
   TimeDistributed EfficientNetB0 and a streaming version of MoViNet, fine-tuned on the tire change dataset.
@@ -81,32 +72,57 @@ Each action class folder contains video clips used for model training, validatio
 ---
 
 ## Usage
+First, ensure you have a **CUDA/cuDNN version compatible with your GPU** installed.
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/Intelligent-Assistant-for-Tire-Change.git
-cd Intelligent-Assistant-for-Tire-Change
+git clone https://github.com/sohaibdaoudi/ChangingTireAssistant_CV_NLP_Project.git
+
 ```
 
 ### 2. Create and Activate Virtual Environment (Recommended)
+#### For `venv` users:
+
 ```bash
-python -m venv venv
-source venv/bin/activate      # On Windows: venv\Scripts\activate
+# Create the virtual environment with Python 3.9
+python3.9 -m venv venv
+
+# Activate the environment
+# On macOS/Linux:
+source venv/bin/activate
+
+# On Windows:
+venv\Scripts\activate
+
+# Change to project directory after activating environment
+cd C:\path\to\folder\ChangingTireAssistant_CV_NLP_Project\Algorithm_V4
+```
+
+#### For `conda` users:
+
+```bash
+# Create the conda environment with Python 3.9
+conda create --name tire-assistant python=3.9
+
+# Activate the environment
+conda activate tire-assistant
+
+# Change to project directory after activating environment
+cd C:\path\to\folder\ChangingTireAssistant_CV_NLP_Project\Algorithm_V4
 ```
 
 ### 3. Install Dependencies
+
 ```bash
-pip install -r requirements.txt
+pip install -r Algorithm_V4/requirements.txt
 ```
 
 ### 4. Run the System
-Run action recognition or object detection modules as follows (example):
-```bash
-python action_recognition/infer.py      # For recognizing user actions
-python object_detection/detect.py       # For detecting tools in real-time
-```
+This is the main script to run the full assistant:
 
-> Make sure to update paths to your video or webcam stream, and provide access to model weights.
+```bash
+python Algorithm_V4/AlgoV4.py
+```
 
 ---
 
